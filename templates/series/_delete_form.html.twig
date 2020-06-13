@@ -1,0 +1,5 @@
+<form method="post" action="{{ path('serie_delete', {'id': serie.id}) }}" onsubmit="return confirm('T'es sur de vouloir supprimer cette série ?');">
+    <input type="hidden" name="_method" value="DELETE">
+    <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ serie.id) }}">
+    <button class="btn">Supprimer</button>
+</form>

@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ manga.title }}{% endblock %}
+
+{% block body %}
+<br>
+<h1 class="text-center bg-light"> {{ manga.title }} </h1>
+<div class="text-center">
+    <img src ="{{ manga.picture }}" heigth="700" width="300">
+</div>
+<br>
+<h5 class= "text-center">Nb d'épisodes</h5>
+<p class="text-center"> {{ manga.episodes }}</p>
+<br>
+<h5 class= "text-center">Synopsis</h5>
+<p class="mt-1"> {{ manga.description }}</p>
+<br>
+
+<div class="text-center">
+    <a href="{{ manga.streaming }}"><button <button type="button" class="btn btn-primary">Voir le Manga</button></a>
+    <a href="{{ path('manga_edit', {'id': manga.id})}}"><button class="btn btn-info">Editer</button><a/>
+        <a class="btn btn-danger" href="{{ path('manga_delete', {'id': manga.id}) }}" onclick="return confirm('Etes vous sur de vouloir supprimer ce manga ?');">
+        supprimer
+        </a> 
+</div>
+
+{% endblock %}

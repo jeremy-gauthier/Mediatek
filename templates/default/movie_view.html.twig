@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ movie.title }}{% endblock %}
+
+{% block body %}
+
+<br>
+<div class="list-group text-center">
+    {% for category in movie.categories %}
+    <a href="{{ path('category_movie', {'id': category.id}) }}" class="list-group-item list-group-item-action">
+        <img src="{{ category.picture }}" heigth="500" width="200">
+    </a>
+    {% endfor %}
+    <br>
+</div>
+<h1 class="text-center bg-light"> {{ movie.title }}</h1>
+<div class="text-center">
+    <img src ="{{ movie.picture }}" heigth="700" width="300">
+
+</div>
+
+<br>
+<h5 class= "text-center">Synopsis</h5>
+<p class="mt-1"> {{ movie.description }}</p>
+<br>
+
+<div class="text-center">
+                
+        <a href="{{ movie.streaming }}"><button <button type="button" class="btn btn-primary">Voir le Film</button></a>
+        <a href="{{ path('movie_edit', {'id': movie.id})}}"><button class="btn btn-info">Editer</button><a/>
+        <a class="btn btn-danger" href="{{ path('movie_delete', {'id': movie.id}) }}" onclick="return confirm('Etes vous sur de vouloir supprimer ce film ?');">
+        supprimer
+        </a>
+        
+             
+    
+</div>
+<br><br>
+{% endblock %}

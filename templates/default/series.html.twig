@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Séries{% endblock %}
+
+{% block body %}
+<br>
+<div class="text-center">
+<img src="https://upload.wikimedia.org/wikipedia/commons/7/75/VHS-Video-Tape-Top-Flat.jpg" width="150">
+<h5>Liste des séries</h5>
+</div>
+
+<div>
+{% for serie in series %}
+    
+        <a href="{{ path('serie_view', {'id': serie.id}) }}" class=" list-group-item-action">
+        <img src="{{ serie.picture }}" heigth="300" width="100">
+    </a>
+    
+{% endfor %} 
+</div>
+<br>
+<a href="{{ path('serie_new')}}"><button class="btn btn-primary">Ajouter une série</button><a/>
+
+{% endblock %}

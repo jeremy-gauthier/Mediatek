@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Ajouter Film{% endblock %}
+{% form_theme form 'bootstrap_4_layout.html.twig' %}
+{% block body %}
+
+
+
+    <h1>Ajouter un film</h1>
+
+    {{ include('movies/_form.html.twig') }}
+
+    <br>
+<div class="text-center">
+    <a href="{{ path('movies') }}">Retour à la liste de films</a>
+</div>
+{% endblock %}

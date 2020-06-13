@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Editeur{% endblock %}
+
+{% block body %}
+    <h1>Editeur</h1>
+
+    {{ include('series/_form.html.twig', {'button_label': 'Mettre à jour'}) }}
+<div class="text-center">
+    <a href="{{ path('series') }}">Retour à la liste des séries</a>
+</div>
+    {{ include('series/_delete_form.html.twig') }}
+{% endblock %}

@@ -1,0 +1,8 @@
+{{ form_start(form) }}
+<div class="list-group">
+    {{ form_widget(form) }}
+</div>
+<div class="text-center">
+    <a href="{{ path('movies') }}"><button type="submit" class="btn btn-success">{{ button_label|default('Ajouter') }}</button></a>
+</div>
+{{ form_end(form) }}

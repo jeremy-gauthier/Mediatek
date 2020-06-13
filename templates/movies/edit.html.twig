@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Editeur{% endblock %}
+
+{% block body %}
+<br>
+    <h1>Editeur</h1>
+
+    {{ include('movies/_form.html.twig', {'button_label': 'Mettre à jour'}) }}
+<div class="text-center">
+    <a href="{{ path('movies') }}">Retour à la liste de films</a>
+</div>
+    {{ include('movies/_delete_form.html.twig') }}
+{% endblock %}

@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Anime{% endblock %}
+
+{% block body %}
+<br>
+<div class="list-group text-center">
+    {% for category in anime.categories %}
+    <a href="{{ path('category_anime', {'id': category.id}) }}" class="list-group-item list-group-item-action">
+        <img src="{{ category.picture }}" heigth="700" width="300">
+    </a>
+    {% endfor %}
+    <br>
+</div>
+<h1 class="text-center bg-light"> {{ anime.title }}</h1>
+<div class="text-center">
+    <img src ="{{ anime.picture }}" heigth="700" width="300">
+</div>
+
+<br>
+<h5 class= "text-center">Synopsis</h5>
+<p class="mt-1"> {{ anime.description }}</p>
+<br>
+
+<div class="text-center">
+    <a href="{{ anime.streaming }}"><button <button type="button" class="btn btn-primary"> Voir le dessin animé </button></a>
+    <a href="{{ path('anime_edit', {'id': anime.id})}}"><button class="btn btn-info">Editer</button><a/>
+        <a class="btn btn-danger" href="{{ path('anime_delete', {'id': anime.id}) }}" onclick="return confirm('Etes vous sur de vouloir supprimer ce dessin animé ?');">
+        supprimer
+        </a> 
+</div>
+<br>
+{% endblock %}

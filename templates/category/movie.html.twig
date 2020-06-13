@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ category.label }}{% endblock %}
+
+{% block body %}
+<br>
+<div class="text-center"><img src="{{ category.picture }}" heigth="700" width="300"></img></div>
+<br>
+<div class="list-group">
+    {% for movie in category.movies %}
+    <a href="{{ path('movie_view', {'id': movie.id}) }}" class="list-group-item list-group-item-action">
+        {{ movie.title }}
+    </a>
+    {% endfor %}
+</div>
+
+{% endblock %}

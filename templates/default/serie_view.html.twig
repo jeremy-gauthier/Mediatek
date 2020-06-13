@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ serie.title }}{% endblock %}
+
+{% block body %}
+<br>
+<h1 class="text-center bg-light "> {{ serie.title }} </h1>
+<div class="text-center">
+    <img src ="{{ serie.picture }}" heigth="700" width="300">
+</div>
+<br>
+<h2 class= "text-center">Synopsis</h2>
+<p class="mt-1"> {{ serie.description }}</p>
+<br>
+
+<div class="text-center">
+{% for saison in serie.saisons %}
+    <a href="{{saison.link }}" class="list-group-item-action">
+        <button class="btn btn-primary">Saison {{ saison.number}} </button>
+    </a>
+{% endfor %}
+<br><br>
+<a href="{{ path('serie_edit', {'id': serie.id})}}"><button class="btn btn-info">Editer</button><a/>
+        <a class="btn btn-danger" href="{{ path('serie_delete', {'id': serie.id}) }}" onclick="return confirm('Etes vous sur de vouloir supprimer cette série ?');">
+        supprimer
+        </a>  
+</div> 
+{% endblock %}

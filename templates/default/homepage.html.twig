@@ -1,0 +1,70 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Accueil{% endblock %}
+
+{% block body %}
+<br>
+<h2 class="mb-5 bienvenue">Bienvenue sur Mediatek</h2>
+
+<div>
+<a href="/movies" type="button" class="list-group-item liste" >Films</a>
+<br>
+<div class="text-center">
+{% for movie in movies %}
+    <a href="{{ path('movie_view', {'id': movie.id}) }}" class=" list-group-item-action">
+        <img src="{{ movie.picture }}" heigth="300" width="100" >
+    </a>
+{% endfor %}
+<br> 
+<a href="/movies">Voir tous les films</a>
+</div>
+</div>
+<br>
+
+
+<div>
+<a href="/series" type="button" class="list-group-item liste" >Séries</a>
+<br>
+<div class="text-center">
+{% for serie in series %}
+    <a href="{{ path('serie_view', {'id': serie.id}) }}" class="list-group-item-action">
+        <img src="{{ serie.picture }}" heigth="300" width="100" >
+    </a>
+{% endfor %} 
+<br> 
+<a href="/series">Voir toutes les séries</a>
+</div>
+</div>
+<br>
+
+<div>
+<a href="/animation" type="button" class="list-group-item liste" >Dessins Animés</a>
+<br>
+<div class="text-center">
+{% for anime in animation %}
+    <a href="{{ path('anime_view', {'id': anime.id}) }}" class="list-group-item-action">
+        <img src="{{ anime.picture }}" heigth="300" width="100" >
+    </a>
+{% endfor %} 
+<br> 
+<a href="/animation">Voir tous les dessins animés</a>
+</div>
+</div>
+<br>
+
+<div>
+<a href="/mangas" type="button" class="list-group-item liste" >Mangas</a>
+<br>
+<div class="text-center">
+{% for manga in mangas %}
+    <a href="{{ path('manga_view', {'id': manga.id}) }}" class=" list-group-item-action">
+        <img src="{{ manga.picture }}" heigth="300" width="100" >
+    </a>
+{% endfor %}
+<br> 
+<a href="/mangas">Voir tous les mangas</a>
+</div>
+</div>
+<br>
+
+{% endblock %}

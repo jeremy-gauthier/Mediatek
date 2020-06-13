@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Dessins Animé{% endblock %}
+
+{% block body %}
+<br>
+
+<div class="text-center">
+<img src="https://upload.wikimedia.org/wikipedia/commons/7/75/VHS-Video-Tape-Top-Flat.jpg" width="150">
+<h5>Liste des Dessins Animé</h5>
+</div>
+
+<div>
+{% for anime in animation %}
+        <a href="{{ path('anime_view', {'id': anime.id}) }}" class="list-group-item-action">
+        <img src="{{ anime.picture }}" heigth="300" width="100">
+    </a>
+    
+{% endfor %} 
+</div>
+<br>
+<a href="{{ path('anime_new')}}"><button class="btn btn-primary">Ajouter un Dessin animé</button><a/>
+<br><br><br>
+{% endblock %}

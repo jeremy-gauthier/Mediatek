@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Mangas{% endblock %}
+
+{% block body %}
+<br>
+
+<div class="text-center">
+<img src="https://upload.wikimedia.org/wikipedia/commons/7/75/VHS-Video-Tape-Top-Flat.jpg" width="150">
+<h5>Liste des mangas</h5>
+</div>
+
+<div>
+{% for manga in mangas %}
+    
+        <a href="{{ path('manga_view', {'id': manga.id}) }}" class="list-group-item-action">
+        <img src="{{ manga.picture }}" heigth="300" width="100">
+    </a>
+    
+{% endfor %} 
+</div>
+<br>
+<a href="{{ path('manga_new')}}"><button class="btn btn-primary">Ajouter un Manga</button><a/>
+<br><br><br>
+{% endblock %}

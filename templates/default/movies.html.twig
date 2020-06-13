@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Films{% endblock %}
+
+{% block body %}
+<br>
+
+<div class="text-center">
+<img src="https://upload.wikimedia.org/wikipedia/commons/7/75/VHS-Video-Tape-Top-Flat.jpg" width="150">
+<h5>Liste des films</h5>
+</div>
+
+<div>
+{% for movie in movies %}
+    
+        <a href="{{ path('movie_view', {'id': movie.id}) }}" class="list-group-item-action">
+        <img src="{{ movie.picture }}" heigth="300" width="100">
+    </a>
+    
+{% endfor %} 
+</div>
+<br>
+<a href="{{ path('movie_new')}}"><button class="btn btn-primary">Ajouter un film</button><a/>
+<br><br><br>
+{% endblock %}

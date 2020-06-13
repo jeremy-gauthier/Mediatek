@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Ajouter Série{% endblock %}
+{% form_theme form 'bootstrap_4_layout.html.twig' %}
+{% block body %}
+
+
+
+    <h1>Ajouter une série</h1>
+
+    {{ include('series/_form.html.twig') }}
+
+    <br>
+<div class="text-center">
+    <a href="{{ path('series') }}">Retour à la liste de Séries</a>
+</div>
+{% endblock %}

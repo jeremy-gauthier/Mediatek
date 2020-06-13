@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ category.label }}{% endblock %}
+
+{% block body %}
+<br>
+<div class="text-center"><img src="{{ category.picture }}" heigth="700" width="300"></img></div>
+<br>
+<div class="list-group">
+    {% for anime in category.animation %}
+    <a href="{{ path('anime_view', {'id': anime.id}) }}" class="list-group-item list-group-item-action">
+        {{ anime.title }}
+    </a>
+    {% endfor %}
+</div>
+
+{% endblock %}

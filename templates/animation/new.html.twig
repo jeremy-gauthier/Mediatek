@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Ajouter dessin animé{% endblock %}
+{% form_theme form 'bootstrap_4_layout.html.twig' %}
+{% block body %}
+    <h1>Ajouter un dessin animé</h1>
+
+    {{ include('animation/_form.html.twig') }}
+
+<br>
+<div class="text-center">
+    <a href="{{ path('animation_index') }}">Retour à la liste des dessin animés</a>
+</div>
+{% endblock %}
