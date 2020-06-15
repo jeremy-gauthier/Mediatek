@@ -12,7 +12,7 @@
 
 <div>
 {% for movie in movies %}
-    
+        <span title="{{ movie.title }}">
         <a href="{{ path('movie_view', {'id': movie.id}) }}" class="list-group-item-action">
         <img src="{{ movie.picture }}" heigth="300" width="100">
     </a>
